@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detail_scroll_view"
+    style="@style/layoutStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:contentDescription="@string/poster_thumbnail"
+                android:id="@+id/poster"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/layoutStyle"
+                    android:id="@+id/rate"/>
+
+                <TextView
+                    style="@style/layoutStyle"
+                    android:id="@+id/release_date"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/unfavorite"
+                    android:id="@+id/favorite_button"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/layoutStyle"
+            android:id="@+id/plot_synopsis"/>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <!-- Trailers -->
+        <TextView
+            style="@style/layoutStyle"
+            android:text="@string/trailers"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_trailers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+            <TextView
+                style="@style/layoutStyle"
+                android:id="@+id/no_trailer"
+                android:text="@string/no_trailer_message"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+            <ProgressBar
+                style="@style/layoutStyle"
+                android:id="@+id/trailer_load_progress"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <!-- Reviews -->
+        <TextView
+            style="@style/layoutStyle"
+            android:text="@string/reviews"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                style="@style/layoutStyle"
+                android:id="@+id/no_review"
+                android:text="@string/no_review_message"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+            <ProgressBar
+                style="@style/layoutStyle"
+                android:id="@+id/review_load_progress"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
